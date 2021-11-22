@@ -7,7 +7,8 @@ namespace Vsite.Pood.MyDrawing.UnitTests
     {
         [TestMethod]
         public void TestMethod1()
-        {
+        { 
+            
         }
     }
 }

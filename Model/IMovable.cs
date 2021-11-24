@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Vsite.Pood.MyDrawing.Model
 {
-    class Class1
+    public interface IMovable
     {
+        public void Move(double dx, double dy)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

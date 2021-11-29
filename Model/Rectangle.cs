@@ -21,8 +21,25 @@ namespace Vsite.Pood.MyDrawing.Model
 
         public void Resize(ResizeDirection direction, double dx, double dy)
         {
-            throw new NotImplementedException();
-        }
+            if ((direction & ResizeDirection.North) != 0)
+            {
+                leftUpper.Move(0, dy);
+                height += dy;
+            }
+            if ((direction & ResizeDirection.South) != 0)
+            {
+                height -= dy;
+            }
+            if ((direction & ResizeDirection.West) != 0)
+            {
+                leftUpper.Move(dx, 0);
+                width -= dx;
+            }
+            if ((direction & ResizeDirection.East) != 0)
+            {
+                width += dx;
+            }
+    }
 
         public Point LeftUpper { get { return leftUpper; } }
         public double Width { get { return width; } }

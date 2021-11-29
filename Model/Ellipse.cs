@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vsite.Pood.MyDrawing.Model
 {
-    public class Elipse : Shape, IResizeable, IMoveable
+    public class Ellipse : Shape, IResizeable, IMoveable
     {
         public void Move(double dx, double dy)
         {

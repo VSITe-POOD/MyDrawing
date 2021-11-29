@@ -29,7 +29,6 @@ namespace Vsite.Pood.MyDrawing.UnitTests
             Assert.AreEqual(22, rect.Width);
             Assert.AreEqual(4, rect.LeftUpper.X);
             Assert.AreEqual(5, rect.LeftUpper.Y);
-            Assert.AreEqual(5, rect.Width);
             Assert.AreEqual(15, rect.Height);
         }
         [TestMethod]
@@ -46,20 +45,20 @@ namespace Vsite.Pood.MyDrawing.UnitTests
         public void ResizeOnNorthtBy3IncreasesRectangleHeightBy2AndMovesLeftUpperYBy3()
         {
             Rectangle rect = new Rectangle(4, 5, 20, 15);
-            rect.Resize(ResizeDirection.North, 3, 0);
+            rect.Resize(ResizeDirection.North, 0, 3);
             Assert.AreEqual(20, rect.Width);
             Assert.AreEqual(4, rect.LeftUpper.X);
             Assert.AreEqual(8, rect.LeftUpper.Y);
             Assert.AreEqual(18, rect.Height);
         }
         [TestMethod]
-        public void ResizeOnSouthtBy4DecreasesRectangleHeightBy4()
+        public void ResizeOnSouthBy4DecreasesRectangleHeightBy4()
         {
             Rectangle rect = new Rectangle(4, 5, 20, 15);
-            rect.Resize(ResizeDirection.South, 4, 0);
+            rect.Resize(ResizeDirection.South, 0, 4);
             Assert.AreEqual(20, rect.Width);
             Assert.AreEqual(4, rect.LeftUpper.X);
-            Assert.AreEqual(8, rect.LeftUpper.Y);
+            Assert.AreEqual(5, rect.LeftUpper.Y);
             Assert.AreEqual(11, rect.Height);
         }
         [TestMethod]

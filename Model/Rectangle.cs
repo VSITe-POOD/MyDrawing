@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vsite.Pood.MyDrawing.Model
 {
-    public class Rectangle : IMovable, IResizable
+    public class Rectangle : Shape, IMovable, IResizable
     {
         private Point leftUpper;
         private double width;

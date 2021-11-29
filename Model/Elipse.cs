@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vsite.Pood.MyDrawing.Model
 {
-    public class Elipse : IResizable, IMovable
+    public class Elipse : Shape, IResizable, IMovable
     {
         private Point center;
         private double semi_axisA;

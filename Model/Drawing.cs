@@ -13,11 +13,16 @@ namespace Vsite.Pood.MyDrawing.Model
             shapes.Add(shape);
         }
 
-        public void Remove(Shape shape)
+        public int Remove(Shape shape)
         {
+            int index = shapes.IndexOf(shape);
             shapes.Remove(shape);
+            return index;
         }
-
+        public void Insert(Shape shape, int index)
+        {
+            shapes.Insert(index, shape);
+        }
         public IEnumerable<Shape> Shapes { get { return shapes; } }
 
         private readonly List<Shape> shapes = new List<Shape>();

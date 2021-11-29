@@ -21,7 +21,65 @@ namespace VSite.POOD.MyDrawing.Model
 
         public void Resize(ResizeDirection RD, double dx, double dy)
         {
-            throw new NotImplementedException();
+            switch (RD)
+            {
+                case ResizeDirection.North:
+                    this.height += dy;
+                    this.leftUpper.Move(dx,dy);
+                    break;
+                case ResizeDirection.East:
+                    this.width += dx;
+                    break;
+                case ResizeDirection.West:
+                    this.width -= dx;
+                    this.leftUpper.Move(dx, dy);
+                    break;
+                case ResizeDirection.South:
+                    this.height += dy;
+                    break;
+                case ResizeDirection.NorthEast:
+                    this.width += dx;
+                    this.height += dy;
+                    this.leftUpper.Move(dx, dy);
+                    break;
+                case ResizeDirection.NorthWest:
+                    this.width -= dx;
+                    this.height += dy;
+                    this.leftUpper.Move(dx, dy);
+                    break;
+                case ResizeDirection.SouthEast:
+                    this.width += dx;
+                    this.height += dy;
+                    break;
+                case ResizeDirection.SouthWest:
+                    this.width -= dx;
+                    this.height += dy;
+                    this.leftUpper.Move(dx, dy);
+                    break;
+
+
+
+
+
+
+
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+             
         }
 
         public Point LeftUpper { get { return leftUpper; } }

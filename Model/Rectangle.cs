@@ -21,65 +21,25 @@ namespace VSite.POOD.MyDrawing.Model
 
         public void Resize(ResizeDirection RD, double dx, double dy)
         {
-            switch (RD)
+            if ((RD & ResizeDirection.North) != 0)
             {
-                case ResizeDirection.North:
-                    this.height += dy;
-                    this.leftUpper.Move(dx,dy);
-                    break;
-                case ResizeDirection.East:
-                    this.width += dx;
-                    break;
-                case ResizeDirection.West:
-                    this.width -= dx;
-                    this.leftUpper.Move(dx, dy);
-                    break;
-                case ResizeDirection.South:
-                    this.height += dy;
-                    break;
-                case ResizeDirection.NorthEast:
-                    this.width += dx;
-                    this.height += dy;
-                    this.leftUpper.Move(dx, dy);
-                    break;
-                case ResizeDirection.NorthWest:
-                    this.width -= dx;
-                    this.height += dy;
-                    this.leftUpper.Move(dx, dy);
-                    break;
-                case ResizeDirection.SouthEast:
-                    this.width += dx;
-                    this.height += dy;
-                    break;
-                case ResizeDirection.SouthWest:
-                    this.width -= dx;
-                    this.height += dy;
-                    this.leftUpper.Move(dx, dy);
-                    break;
-
-
-
-
-
-
-
-
-
-
+                leftUpper.Move(0, dy);
+                height += dy;
             }
 
-
-
-
-
-
-
-
-
-
-
-
-             
+            if ((RD & ResizeDirection.South) != 0)
+            {
+                height -= dy;
+            }
+            if ((RD & ResizeDirection.West) != 0)
+            {
+                leftUpper.Move(dx, 0);
+                width -= dx;
+            }
+            if ((RD & ResizeDirection.East) != 0)
+            {
+                width += dx;
+            }
         }
 
         public Point LeftUpper { get { return leftUpper; } }

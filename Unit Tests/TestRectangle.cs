@@ -73,7 +73,7 @@ namespace VSite.POOD.MyDrawing.Model
             Assert.AreEqual(rect.LeftUpper.X, 4);
             Assert.AreEqual(rect.LeftUpper.Y, 5);
             Assert.AreEqual(rect.Width, 20);
-            Assert.AreEqual(rect.Height, 14);
+            Assert.AreEqual(rect.Height, 6);
         }
 
         [TestMethod]

@@ -12,14 +12,14 @@ namespace Vsite.Pood.MyDrawing.Model
         {
             shapes.Add(shape);
         }
+
         public void Remove(Shape shape)
         {
             shapes.Remove(shape);
         }
-        public IEnumerable<Shape> Shapes
-        {
-            get { return shapes; }
-        }
+
+        public IEnumerable<Shape> Shapes { get { return shapes; } }
+
         private readonly List<Shape> shapes = new List<Shape>();
     }
 }

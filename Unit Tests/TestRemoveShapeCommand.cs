@@ -13,39 +13,39 @@ namespace VSite.POOD.MyDrawing.Model
     public class TestRemoveShapeCommand
     {
         [TestMethod]
-        public void ExecuteRemovesShapeFromDrawing()
+        public void UndoReturnsShapToDrawing()
         { 
             // dz
             Drawing drawing = new Drawing();
             var rect = new Rectangle(1, 2, 3, 4);
-            var command = new AddShapeCommand(drawing, rect);
-            command.Execute();
+            var command = new RemoveShapeCommand(drawing, rect);
+            command.Undo();
             Assert.AreEqual(1, drawing.Shapes.Count());
             Assert.IsTrue(drawing.Shapes.ElementAt(0) == rect);
         }
 
         [TestMethod]
-        public void UndoBringsBackShapeToDrawing()
+        public void ExecuteRemovesShapeFromDrawing()
         {
             // dz
             Drawing drawing = new Drawing();
             var rect = new Rectangle(1, 2, 3, 4);
-            var command = new AddShapeCommand(drawing, rect);
-            command.Execute();
+            var command = new RemoveShapeCommand(drawing, rect);
             command.Undo();
+            command.Execute();
             Assert.AreEqual(0, drawing.Shapes.Count());
         }
 
         [TestMethod]
-        public void ExecuteAfterUndoRemovesShapeFromDrawing()
+        public void UndoAfterExecuteBringsBackShapeToDrawing()
         {
             // dz
             Drawing drawing = new Drawing();
             var rect = new Rectangle(1, 2, 3, 4);
-            var command = new AddShapeCommand(drawing, rect);
-            command.Execute();
+            var command = new RemoveShapeCommand(drawing, rect);
             command.Undo();
             command.Execute();
+            command.Undo();
             Assert.AreEqual(1, drawing.Shapes.Count());
             Assert.IsTrue(drawing.Shapes.ElementAt(0) == rect);
         }

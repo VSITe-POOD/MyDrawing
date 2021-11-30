@@ -6,18 +6,38 @@ using System.Threading.Tasks;
 
 namespace VSite.POOD.MyDrawing.Model
 {
-    public class Ellipse : IResizable, IMovable
+    public class Ellipse : Shape, IResizable, IMovable
     {
+        public Ellipse(Point center, double semiAxisA, double semiAxisB)
+        {
+            Center = center;
+            SemiAxisA = semiAxisA;
+            SemiAxisB = semiAxisB;
+        }
         public void Move(double dx, double dy)
         {
-            // dz
-            throw new NotImplementedException();
+            Center.Move(dx, dy);
         }
 
         public void Resize(ResizeDirection RD, double dx, double dy)
         {
-            // dz
-            throw new NotImplementedException();
+            if ((RD & ResizeDirection.North) != 0)
+            {
+                SemiAxisA += dy;
+            }
+
+            if ((RD & ResizeDirection.South) != 0)
+            {
+                SemiAxisA -= dy;
+            }
+            if ((RD & ResizeDirection.West) != 0)
+            {
+                SemiAxisB -= dx;
+            }
+            if ((RD & ResizeDirection.East) != 0)
+            {
+                SemiAxisB += dx;
+            }
         }
 
         public Point center { get { return Center; } } 

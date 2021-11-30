@@ -21,7 +21,6 @@ namespace VSite.POOD.MyDrawing.Model
 
         public void Undo()
         {
-            
             drawing.Insert(shape, index);
         }
         private Drawing drawing;

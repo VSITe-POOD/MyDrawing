@@ -24,13 +24,13 @@ namespace Vsite.Pood.MyDrawing.Model
         {
             get { return this.semi_axisB; }
         }
-        public void Move(double dx, double dy)
+        public override void Move(double dx, double dy)
         {
             //Domaća zadaća
             throw new NotImplementedException();
         }
 
-        public void Resize(ResizeDirection direction, double dx, double dy)
+        public override void Resize(ResizeDirection direction, double dx, double dy)
         {
             //Domaća zadaća
             throw new NotImplementedException();

@@ -12,6 +12,7 @@ namespace Vsite.Pood.MyDrawing.Model
         {
             this.drawing = drawing;
             this.shape = shape;
+            Description = "Remove shape";
         }
         public void Execute()
         {
@@ -26,5 +27,7 @@ namespace Vsite.Pood.MyDrawing.Model
         private Drawing drawing;
         private Shape shape;
         private int index;
+
+        public string Description { get; private set; }
     }
 }

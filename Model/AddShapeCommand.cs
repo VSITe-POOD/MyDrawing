@@ -12,6 +12,7 @@ namespace Vsite.Pood.MyDrawing.Model
         {
             this.drawing = drawing;
             this.shape = shape;
+            Description = "Add shape";
         }
         public void Execute()
         {
@@ -25,5 +26,7 @@ namespace Vsite.Pood.MyDrawing.Model
 
         private Drawing drawing;
         private Shape shape;
+
+        public string Description { get; private set; }
     }
 }

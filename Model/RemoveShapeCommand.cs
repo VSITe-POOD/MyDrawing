@@ -11,11 +11,14 @@ namespace Vsite.Pood.MyDrawing.Model
         private readonly Drawing drawing;
         private readonly Shape shape;
         private int indexOfLastRemoved;
+        public string Description { get; private set; }
         public RemoveShapeCommand(Drawing drawing, Shape shape)
         {
             this.drawing = drawing;
             this.shape = shape;
+            this.Description = "Remove shape";
         }
+
         public void Execute()
         {
             drawing.Remove(shape);

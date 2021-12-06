@@ -10,11 +10,14 @@ namespace Vsite.Pood.MyDrawing.Model
     {
         private Drawing drawing;
         private Shape shape;
+        public string Description { get; private set; }
         public AddShapeCommand(Drawing drawing, Shape shape)
         {
             this.drawing = drawing;
             this.shape = shape;
+            this.Description = "Add shape";
         }
+
         public void Execute()
         {
             drawing.Add(shape);

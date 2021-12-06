@@ -10,5 +10,7 @@ namespace Vsite.Pood.MyDrawing.Model
     {
         void Execute();
         void Undo();
+
+        string Description { get; }
     }
 }

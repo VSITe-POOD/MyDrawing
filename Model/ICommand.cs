@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace VSite.POOD.MyDrawing.Model
 {
-    interface ICommand
+    public interface ICommand
     {
         void Execute();
         void Undo();
+
+        string Description { get; }
     }
 }

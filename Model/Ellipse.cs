@@ -14,12 +14,12 @@ namespace VSite.POOD.MyDrawing.Model
             SemiAxisA = semiAxisA;
             SemiAxisB = semiAxisB;
         }
-        public void Move(double dx, double dy)
+        public override void Move(double dx, double dy)
         {
             Center.Move(dx, dy);
         }
 
-        public void Resize(ResizeDirection RD, double dx, double dy)
+        public override void Resize(ResizeDirection RD, double dx, double dy)
         {
             if ((RD & ResizeDirection.North) != 0)
             {

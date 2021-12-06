@@ -14,11 +14,11 @@ namespace Vsite.Pood.MyDrawing.Model
             this.width = width;
             this.height = height;
         }
-        public void Move(double dx, double dy)
+        public override void Move(double dx, double dy)
         {
             leftUpper.Move(dx, dy);
         }
-        public void Resize(ResizeDirection direction, double dx, double dy)
+        public override void Resize(ResizeDirection direction, double dx, double dy)
         {
             if((direction & ResizeDirection.North) != 0) 
             {

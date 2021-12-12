@@ -10,9 +10,9 @@ namespace Vsite.Pood.MyDrawing.Model
     {
         public Ellipse(double x, double y, double semiAxisA, double semiAxisB)
         {
-            center = new Point(x,y);
-            this.semiaxisA = semiaxisA;
-            this.semiaxisB = semiaxisB;
+            center = new Point(x, y);
+            this.semiaxisA = semiAxisA;
+            this.semiaxisB = semiAxisB;
         }
         public void Move(double dx, double dy)
         {
@@ -43,8 +43,8 @@ namespace Vsite.Pood.MyDrawing.Model
             }
         }
         public Point Center { get { return center; } }
-        public double SemiaxisA { get { return semiaxisA; } }
-        public double SemiaxisB { get { return semiaxisB; } }
+        public double SemiAxisA { get { return semiaxisA; } }
+        public double SemiAxisB { get { return semiaxisB; } }
 
         private Point center;
         private double semiaxisA;

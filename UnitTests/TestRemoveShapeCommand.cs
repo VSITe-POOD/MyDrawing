@@ -10,6 +10,7 @@ namespace Vsite.Pood.MyDrawing.UnitTests
         [TestMethod]
         public void ExecuteRemoveShapeFromDrawing()
         {
+            //dz
             Drawing drawing = new Drawing();
             var rect = new Rectangle(1, 2, 3, 4);
             var command = new AddShapeCommand(drawing, rect);
@@ -21,6 +22,7 @@ namespace Vsite.Pood.MyDrawing.UnitTests
         [TestMethod]
         public void UndoBringsShapeBackDrawing()
         {
+            //dz
             Drawing drawing = new Drawing();
             var rect = new Rectangle(1, 2, 3, 4);
             var command = new AddShapeCommand(drawing, rect);
@@ -31,6 +33,7 @@ namespace Vsite.Pood.MyDrawing.UnitTests
         [TestMethod]
         public void ExecuteAfterUndoRemovesShapeFromDrawing()
         {
+            //dz
             Drawing drawing = new Drawing();
             var rect = new Rectangle(1, 2, 3, 4);
             var command = new AddShapeCommand(drawing, rect);

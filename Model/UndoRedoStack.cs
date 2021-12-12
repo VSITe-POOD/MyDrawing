@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace Vsite.Pood.MyDrawing.Model
 {
-    internal interface ICommand
+    public class UndoRedoStack
     {
-        void Execute();
-        void Undo();
-
-        string Desription { get: }
-           
+        private Stack<ICommand> UndoStack = new Stack<ICommand>();
+        private Stack<ICommand> RedoStack = new Stack<ICommand>();
     }
 }

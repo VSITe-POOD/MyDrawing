@@ -13,8 +13,10 @@ namespace Vsite.Pood.MyDrawing.Model
             this.x = x;
             this.y = y;
         }
-        public double X { get { return x; } }
-        public double Y { get { return y; } }
+
+        public double X { get { return x; }  }
+        public double Y { get { return y; }  }
+
         private double x;
         private double y;
 

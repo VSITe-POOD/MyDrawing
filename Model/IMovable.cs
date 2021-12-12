@@ -8,9 +8,6 @@ namespace Vsite.Pood.MyDrawing.Model
 {
     public interface IMovable
     {
-        public void Move(double dx, double dy)
-        {
-            throw new NotImplementedException();
-        }
+        void Move(double dx, double dy);
     }
 }

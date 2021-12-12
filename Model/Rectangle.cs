@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Vsite.Pood.MyDrawing.Model
 {
-    public class Rectangle :Shape, IMovable, IResizable
+    public class Rectangle : Shape, IMovable, IResizable
     {
         public Rectangle(double x, double y, double width, double height)
         {
             leftUpper = new Point(x, y);
             this.width = width;
-            this.height = height;   
+            this.height = height;
         }
-        public void Move(double dx, double dy)
+        public override void Move(double dx, double dy)
         {
-            leftUpper.Move(dx, dy); 
+            leftUpper.Move(dx, dy);
         }
 
-        public void Resize(ResizeDirection direction, double dx, double dy)
+        public override void Resize(ResizeDirection direction, double dx, double dy)
         {
             if ((direction & ResizeDirection.North) != 0)
             {
@@ -39,7 +39,7 @@ namespace Vsite.Pood.MyDrawing.Model
             {
                 width += dx;
             }
-    }
+        }
 
         public Point LeftUpper { get { return leftUpper; } }
         public double Width { get { return width; } }
@@ -48,6 +48,5 @@ namespace Vsite.Pood.MyDrawing.Model
         private Point leftUpper;
         private double width;
         private double height;
-
     }
 }

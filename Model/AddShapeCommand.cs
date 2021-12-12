@@ -27,6 +27,6 @@ namespace Vsite.Pood.MyDrawing.Model
         private Drawing drawing;
         private Shape shape;
 
-        public string Description {get; private set;}
+        public string Description { get; private set; }
     }
 }

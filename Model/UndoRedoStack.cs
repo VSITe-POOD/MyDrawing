@@ -13,17 +13,20 @@ namespace Vsite.Pood.MyDrawing.Model
             undoStack.Push(command);
             redoStack.Clear();
         }
+
         public void Undo()
         {
             var command = undoStack.Pop();
             command.Undo();
             redoStack.Push(command);
-        }public void Redo()
+        }
+        public void Redo()
         {
             var command = redoStack.Pop();
             command.Execute();
             undoStack.Push(command);
         }
+
         public IEnumerable<string> UndoCommands
         {
             get
@@ -31,7 +34,7 @@ namespace Vsite.Pood.MyDrawing.Model
                 List<string> commands = new List<string>();
                 foreach (var item in undoStack)
                 {
-                    commands.Add(item.Description());
+                    commands.Add(item.Description);
                 }
                 return commands;
             }
@@ -41,13 +44,14 @@ namespace Vsite.Pood.MyDrawing.Model
             get
             {
                 List<string> commands = new List<string>();
-                foreach (var item in undoStack)
+                foreach (var item in redoStack)
                 {
-                    commands.Add(item.Description());
+                    commands.Add(item.Description);
                 }
                 return commands;
             }
         }
+
         private Stack<ICommand> undoStack = new Stack<ICommand>();
         private Stack<ICommand> redoStack = new Stack<ICommand>();
     }

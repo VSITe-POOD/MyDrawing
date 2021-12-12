@@ -11,12 +11,12 @@ namespace Vsite.Pood.MyDrawing.Model
     {
         North = 0x0001,
         East = 0x0002,
-        West = 0x0004,
-        South = 0x0008,
+        South = 0x0004,
+        West = 0x0008,
         NorthEast = North | East,
         SouthEast = South | East,
         SouthWest = South | West,
-        NorthWest = North | West,
+        NorthWest = North | West
     }
     public interface IResizable
     {

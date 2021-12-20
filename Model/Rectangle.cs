@@ -64,5 +64,10 @@ namespace Vsite.Pood.MyDrawing.Model
         {
             return (x >= leftUpper.X && x <= leftUpper.X + width) && (y >= leftUpper.Y - Height && y <= leftUpper.Y);
         }
+
+        public override void Accept(ShapeVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
     }
 }

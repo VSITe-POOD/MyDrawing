@@ -25,6 +25,14 @@ namespace Vsite.Pood.MyDrawing.Model
 
         }
 
+        public void AcceptShapeVisitor(ShapeVisitor visitor)
+        {
+            foreach(var shape in shapes)
+            {
+                shape.Accept(visitor);
+            }
+        }
+
         public IEnumerable<Shape> Shapes
         {
             get { return this.shapes; }          

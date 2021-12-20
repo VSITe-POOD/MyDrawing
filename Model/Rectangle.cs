@@ -45,6 +45,10 @@ namespace Vsite.Pood.MyDrawing.Model
         {
             throw new NotImplementedException();
         }
+        public override void Accept(ShapeVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
 
         public Point LeftUpper { get { return leftUpper; } }
         public double Width { get { return width; } }

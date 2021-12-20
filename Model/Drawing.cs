@@ -24,6 +24,11 @@ namespace Vsite.Pood.MyDrawing.Model
         {
             shapes.Insert(index, shape);
         }
+        public void Accept(ShapeVisitor visitor)
+        {
+            foreach (var shape in shapes)
+                shape.Accept(visitor);
+        }
 
         public IEnumerable<Shape> Shapes
         {

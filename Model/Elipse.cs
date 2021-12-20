@@ -48,6 +48,11 @@ namespace Vsite.Pood.MyDrawing.Model
             throw new NotImplementedException();
         }
 
+        public override void Accept(ShapeVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
+
         public Point Center { get { return center; } }
         public double SemiAxisA { get { return semiaxisA; } }
         public double SemiAxisB { get { return semiaxisB; } }

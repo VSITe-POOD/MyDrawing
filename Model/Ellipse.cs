@@ -42,7 +42,7 @@ namespace VSite.POOD.MyDrawing.Model
 
         public override bool IsHit(double x, double y)
         {
-            throw new NotImplementedException();
+            return (x >= (center.X - semiAxisA) && x <= (center.X + semiAxisA)) && (y >= (center.Y - semiAxisB) && y <= (center.Y + semiAxisB));
         }
 
         public override void Accept(ShapeVisitor visitor)

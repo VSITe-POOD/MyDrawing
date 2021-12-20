@@ -30,6 +30,12 @@ namespace VSite.POOD.MyDrawing.Model
             get { return shapes; }
         }
 
+        public void Accept(ShapeVisitor visitor)
+        {
+            foreach (var shape in shapes)
+                shape.Accept(visitor);
+        }
+
         private readonly List<Shape> shapes = new List<Shape>();
     }
 }

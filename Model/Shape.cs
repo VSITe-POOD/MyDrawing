@@ -13,5 +13,7 @@ namespace VSite.POOD.MyDrawing.Model
         abstract public void Move(double dx, double dy);
 
         abstract public void Resize(ResizeDirection RD, double dx, double dy);
+
+        public abstract void Accept(ShapeVisitor visitor);
     }
 }

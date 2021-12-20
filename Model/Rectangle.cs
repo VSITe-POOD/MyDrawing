@@ -47,6 +47,11 @@ namespace VSite.POOD.MyDrawing.Model
             return (x >= leftUpper.X && x <= leftUpper.X + width) && (y >= leftUpper.Y - height && y <= leftUpper.Y);
         }
 
+        public override void Accept(ShapeVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
+
         public Point LeftUpper { get { return leftUpper; } }
         public double Width { get { return width; } }
         public double Height { get { return height; } }

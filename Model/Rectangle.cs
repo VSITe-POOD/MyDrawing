@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vsite.Pood.MyDrawing.Model
 {
-    public class Rectangle : Shape, IMovable, IResizable
+    public class Rectangle : Shape, IMovable, IResizable, IHittable
     {
         private Point leftUpper;
         private double width;
@@ -56,44 +56,13 @@ namespace Vsite.Pood.MyDrawing.Model
             {
                 this.width += dx;
             }
-            //switch (direction)
-            //{
-            //    case ResizeDirection.East:
-            //        this.width += dy;
-            //        break;
-            //    case ResizeDirection.North:
-            //        this.height += dy;
-            //        this.LeftUpper.Move(0, dy);
-            //        break;
-            //    case ResizeDirection.South:
-            //        this.height -= dy;
-            //        break;
-            //    case ResizeDirection.West:
-            //        this.width -= dy;
-            //        this.LeftUpper.Move(dx, 0);
-            //        break;
-            //    case ResizeDirection.NorthEast:
-            //        this.width += dx;
-            //        this.height += dy;
-            //        this.LeftUpper.Move(dx, 0);
-            //        break;
-            //    case ResizeDirection.NorthWest:
-            //        this.width -= dx;
-            //        this.height += dy;
-            //        this.LeftUpper.Move(dx, dy);
-            //        break;
-            //    case ResizeDirection.SouthEast:
-            //        this.width += dx;
-            //        this.height -= dy;
-            //        break;
-            //    case ResizeDirection.SouthWest:
-            //        this.width -= dx;
-            //        this.height -= dy;
-            //        this.LeftUpper.Move(dx, 0);
-            //        break;
-            //    default:
-            //        break;
-            //}
+            
+
+        }
+
+        public override bool IsHit(double x, double y)
+        {
+            return (x >= leftUpper.X && x <= leftUpper.X + width) && (y >= leftUpper.Y - Height && y <= leftUpper.Y);
         }
     }
 }

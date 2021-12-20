@@ -71,5 +71,50 @@ namespace Vsite.Pood.MyDrawing.UnitTests
             Assert.AreEqual(8, rect.LeftUpper.Y);
             Assert.AreEqual(18, rect.Height);
         }
+
+        [TestMethod]
+        public void IsHitReturnsTrueForAPointInsideRectangle()
+        {
+            double x = 5;
+            double y = 6;
+            Rectangle rect = new Rectangle(1, 6, 6, 6);
+            Assert.IsTrue(rect.IsHit(x, y));
+        }
+
+        [TestMethod]
+        public void IsHitReturnsFalseForAPointRightToRectangle()
+        {
+            double x = 10;
+            double y = 6;
+            Rectangle rect = new Rectangle(1, 6, 6, 6);
+            Assert.IsFalse(rect.IsHit(x, y));
+        }
+
+        [TestMethod]
+        public void IsHitReturnsFalseForAPointLeftFromRectangle()
+        {
+            double x = 0;
+            double y = 6;
+            Rectangle rect = new Rectangle(1, 6, 6, 6);
+            Assert.IsFalse(rect.IsHit(x, y));
+        }
+
+        [TestMethod]
+        public void IsHitReturnsFalseForAPointAboveRectangle()
+        {
+            double x = 5;
+            double y = 12;
+            Rectangle rect = new Rectangle(1, 6, 6, 6);
+            Assert.IsFalse(rect.IsHit(x, y));
+        }
+
+        [TestMethod]
+        public void IsHitReturnsFalseForAPointBelowRectangle()
+        {
+            double x = 5;
+            double y = 0;
+            Rectangle rect = new Rectangle(1, 6, 6, 5);
+            Assert.IsFalse(rect.IsHit(x, y));
+        }
     }
 }

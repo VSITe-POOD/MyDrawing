@@ -29,7 +29,7 @@ namespace Vsite.Pood.MyDrawing.Model
 
         public void Undo()
         {
-            selection.(direction, -dx, -dy);
+            selection.Resize(direction, -dx, -dy);
         }
     }
 }

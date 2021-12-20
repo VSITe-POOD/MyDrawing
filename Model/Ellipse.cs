@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VSite.POOD.MyDrawing.Model
 {
-    public class Ellipse : Shape, IResizable, IMovable
+    public class Ellipse : Shape, IResizable, IMovable, IHittable
     {
         public Ellipse(Point center, double semiAxisA, double semiAxisB)
         {
@@ -38,6 +38,11 @@ namespace VSite.POOD.MyDrawing.Model
             {
                 SemiAxisB += dx;
             }
+        }
+
+        public override bool IsHit(double x, double y)
+        {
+            throw new NotImplementedException();
         }
 
         public Point center { get { return Center; } } 

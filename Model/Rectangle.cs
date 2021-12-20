@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VSite.POOD.MyDrawing.Model
 {
-    public class Rectangle : Shape, IMovable, IResizable
+    public class Rectangle : Shape, IMovable, IResizable, IHittable
     {
         public Rectangle(double X, double Y, double W, double H)
         {
@@ -40,6 +40,11 @@ namespace VSite.POOD.MyDrawing.Model
             {
                 width += dx;
             }
+        }
+
+        public override bool IsHit(double x, double y)
+        {
+            return (x >= leftUpper.X && x <= leftUpper.X + width) && (y >= leftUpper.Y - height && y <= leftUpper.Y);
         }
 
         public Point LeftUpper { get { return leftUpper; } }

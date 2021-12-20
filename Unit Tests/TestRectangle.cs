@@ -87,6 +87,49 @@ namespace VSite.POOD.MyDrawing.Model
             Assert.AreEqual(rect.Height, 13);
         }
 
-        
+        [TestMethod]
+        public void IsHitReturnsTrueForAPointInsideRectangle()
+        {
+            Rectangle rect = new Rectangle(1, 1, 6, 6);
+            double x = 5;
+            double y = -1;
+            Assert.IsTrue(rect.IsHit(x, y));
+        }
+
+        [TestMethod]
+        public void IsHitReturnsFalseForAPointAboveRectangle()
+        {
+            Rectangle rect = new Rectangle(1, 1, 6, 6);
+            double x = 5;
+            double y = 20;
+            Assert.IsFalse(rect.IsHit(x, y));
+        }
+
+        [TestMethod]
+        public void IsHitReturnsFalseForAPointLeftOfRectangle()
+        {
+            Rectangle rect = new Rectangle(1, 1, 6, 6);
+            double x = 0;
+            double y = 6;
+            Assert.IsFalse(rect.IsHit(x, y));
+        }
+
+        [TestMethod]
+        public void IsHitReturnsFalseForAPointRightOfRectangle()
+        {
+            Rectangle rect = new Rectangle(1, 1, 6, 6);
+            double x = 12;
+            double y = 6;
+            Assert.IsFalse(rect.IsHit(x, y));
+        }
+
+        [TestMethod]
+        public void IsHitReturnsFalseForAPointBelowRectangle()
+        {
+            Rectangle rect = new Rectangle(1, 1, 6, 6);
+            double x = 2;
+            double y = -20;
+            Assert.IsFalse(rect.IsHit(x, y));
+        }
     }
 }

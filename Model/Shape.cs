@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Vsite.Pood.MyDrawing.Model
 {
-    abstract public class Shape : IMoveable, IResizeable
+    abstract public class Shape : IMoveable, IResizeable, IHittable
     {
+        abstract public bool IsHit(double x, double y);
         abstract public void Move(double dx, double dy);
         abstract public void Resize(ResizeDirection direction, double dx, double dy);
     }

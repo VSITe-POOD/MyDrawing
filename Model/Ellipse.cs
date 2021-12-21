@@ -41,14 +41,19 @@ namespace Vsite.Pood.MyDrawing.Model
             }
         }
 
+        public override void Accept(ShapeVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
+
         public override bool IsHit(double x, double y)
         {
             throw new NotImplementedException();
         }
 
-        public Point Center { get { return center; } }
-        public double SemiAxisA { get { return semiaxisA; } }
-        public double SemiAxisB { get { return semiaxisB; } }
+        public Point Center { get { return center; } set { this.center = value; } }
+        public double SemiAxisA { get { return semiaxisA; } set { this.semiaxisA = value; } }
+        public double SemiAxisB { get { return semiaxisB; } set { this.semiaxisB = value; } }
 
         private Point center;
         private double semiaxisA;

@@ -39,6 +39,10 @@ namespace Vsite.Pood.MyDrawing.Model
                 width += dx;
             }
         }
+        public override void Accept(ShapeVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
         public override bool IsHit(double x, double y)
         {
             return (x >= leftUpper.X && x <= leftUpper.X + width) && (y >= leftUpper.Y - Height && y <= leftUpper.Y);
